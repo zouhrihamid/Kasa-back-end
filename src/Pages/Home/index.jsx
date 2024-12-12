@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import { Link } from 'react-router-dom';
 import { HomeWrapper, CardContainer, Card, Illustration, HomeImg, TextOverlay, StyledTitle } from './Home.styled';
 import HomeIllustration from '../../assets/ImgHome.jpg';
 
@@ -27,9 +27,11 @@ function Home() {
                   </HomeImg>
                   <CardContainer>
                         {data.map((item) => (
-                              <Card key={item.id} cover={item.cover}>
-                                    <StyledTitle>{item.title}</StyledTitle> {/* Vous pouvez ajouter plus d'informations à l'intérieur de Card ici */}
-                              </Card>
+                              <Link key={item.id} to={`/${item.title.replace(/ /g, '_')}`}>
+                                    <Card key={item.id} cover={item.cover}>
+                                          <StyledTitle>{item.title}</StyledTitle> {/* Vous pouvez ajouter plus d'informations à l'intérieur de Card ici */}
+                                    </Card>
+                              </Link>
                         ))}
                   </CardContainer>
             </HomeWrapper>

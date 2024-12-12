@@ -7,6 +7,7 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Error from './components/Error/Error';
 import Footer from './components/Footer/Footer';
+import AccommodationDetail from './Pages/AccommodationDetai/AccommodationDetail';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
                   <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/a-propos" element={<About />} /> {/* Assurez-vous de conserver ce format */}
+                        <Route path="/:title" element={<AccommodationDetail />} />
                         <Route path="*" element={<Error />} />
                   </Routes>
                   <Footer />
