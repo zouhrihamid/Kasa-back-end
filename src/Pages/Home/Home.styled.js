@@ -3,6 +3,9 @@ import styled from 'styled-components';
 const HomeWrapper = styled.div`
       display: felx;
       justify-content: center;
+      @media screen and (min-width: 360px) and (max-width: 360px) {
+            margin: 10px 20px;
+      }
 `;
 const HomeImg = styled.div`
       margin: 10px 100px 10px 100px;
@@ -10,9 +13,10 @@ const HomeImg = styled.div`
 
 const Illustration = styled.img`
       width: 100%;
-      height: auto;
+      height: 230px;
       border-radius: 10px;
-      filter: brightness(30%);
+      object-fit: cover;
+      filter: brightness(70%);
 `;
 const CardContainer = styled.div`
       display: grid;

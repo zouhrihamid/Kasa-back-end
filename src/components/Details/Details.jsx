@@ -1,73 +1,45 @@
-import React, { useState } from 'react';
-import { ShowDetailDescription, ShowDetailEquipement, ContentBox, BoxTitle, DetailsWrapper } from './Details.styled';
+import React, { useState, useEffect, useRef } from 'react';
+import { ShowDetailLabel, BoxTitle, ArrowIconImage, TitleText, AnimatedContentBox } from './Details.styled';
 import ArrowIcon from '../../assets/Vector.png';
 
-export const Details = ({ accommodation }) => {
-      const [rotatedDescription, setRotatedDescription] = useState(false);
-      const [rotatedEquipement, setRotatedEquipement] = useState(false);
-      const [showDescription, setShowDescription] = useState(false);
-      const [showEquipement, setShowEquipement] = useState(false);
+export const DetailsLabel = ({ TitleLabel, children }) => {
+      const [rotatedArrow, setRotatedArrow] = useState(false);
+      const [showLabel, setShowLabel] = useState(false);
+      const [animate, setAnimate] = useState(false);
+      const [contentHeight, setContentHeight] = useState('0px');
+
+      const contentRef = useRef(null);
+
+      useEffect(() => {
+            if (showLabel) {
+                  setAnimate(true);
+                  if (contentRef.current) {
+                        setContentHeight(`${contentRef.current.scrollHeight}px`); // Récupérer la hauteur réelle du contenu
+                  }
+            } else {
+                  setContentHeight('0px');
+                  const timeout = setTimeout(() => {
+                        setAnimate(false);
+                  }, 1000);
+                  return () => clearTimeout(timeout);
+            }
+      }, [showLabel]);
 
       const handleDescriptionClick = () => {
-            setRotatedDescription(!rotatedDescription);
-            setShowDescription(!showDescription); // Afficher/masquer la description
+            setRotatedArrow(!rotatedArrow);
+            setShowLabel(!showLabel);
       };
 
-      // Fonction pour gérer le clic sur l'image Equipement
-      const handleEquipementClick = () => {
-            setRotatedEquipement(!rotatedEquipement);
-            setShowEquipement(!showEquipement); // Afficher/masquer l'équipement
-      };
       return (
-            <DetailsWrapper>
-                  {/* Box Description */}
-                  <ShowDetailDescription>
-                        <BoxTitle onClick={handleDescriptionClick}>
-                              <span style={{ fontSize: '25px' }}>Description</span>
-                              <img
-                                    src={ArrowIcon}
-                                    alt="Description icon"
-                                    style={{
-                                          transform: rotatedDescription ? 'rotate(90deg)' : 'rotate(-90deg)',
-                                          height: '30px',
-                                          marginTop: '0px',
-                                          cursor: 'pointer',
-                                    }}
-                              />
-                        </BoxTitle>
-                        {/* Affichage de la Description sous la Box Description */}
-                        {showDescription && (
-                              <ContentBox>
-                                    <p style={{ textAlign: 'left', paddingLeft: '5px', paddingTop: '0px' }}>{accommodation.description}</p>
-                              </ContentBox>
-                        )}
-                  </ShowDetailDescription>
+            <ShowDetailLabel>
+                  <BoxTitle>
+                        <TitleText>{TitleLabel}</TitleText>
+                        <ArrowIconImage src={ArrowIcon} alt="Description icon" onClick={handleDescriptionClick} rotated={rotatedArrow} />
+                  </BoxTitle>
 
-                  <ShowDetailEquipement>
-                        <BoxTitle onClick={handleEquipementClick}>
-                              <span style={{ fontSize: '25px' }}>Équipement</span>
-                              <img
-                                    src={ArrowIcon}
-                                    alt="Equipement icon"
-                                    style={{
-                                          transform: rotatedEquipement ? 'rotate(90deg)' : 'rotate(-90deg)',
-                                          height: '30px',
-                                          marginTop: '0px',
-                                          cursor: 'pointer',
-                                    }}
-                              />
-                        </BoxTitle>
-                        {/* Affichage des Équipements sous la Box Équipement */}
-                        {showEquipement && (
-                              <ContentBox>
-                                    <ul style={{ listStyleType: 'none', textAlign: 'left', paddingLeft: '5px' }}>
-                                          {accommodation.equipments.map((equip, index) => (
-                                                <li key={index}>{equip}</li>
-                                          ))}
-                                    </ul>
-                              </ContentBox>
-                        )}
-                  </ShowDetailEquipement>
-            </DetailsWrapper>
+                  <AnimatedContentBox ref={contentRef} show={showLabel} animate={animate} contentHeight={contentHeight}>
+                        {children}
+                  </AnimatedContentBox>
+            </ShowDetailLabel>
       );
 };
