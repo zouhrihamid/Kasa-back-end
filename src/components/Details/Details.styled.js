@@ -1,5 +1,13 @@
 import styled from 'styled-components';
-
+const ShowDetailLabel = styled.div`
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: 10px 50px 10px 20px;
+      @media screen and(max-width:768px) {
+            flex-direction: column;
+      }
+`;
 const BoxTitle = styled.div`
       display: flex;
       justify-content: space-between;
@@ -20,13 +28,6 @@ const ArrowIconImage = styled.img`
       cursor: pointer;
       transform: ${({ rotated }) => (rotated ? 'rotate(90deg)' : 'rotate(-90deg)')};
       transition: transform 0.3s ease-in-out;
-`;
-
-const ShowDetailLabel = styled.div`
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      margin: 10px 50px 10px 20px;
 `;
 
 const AnimatedContentBox = styled.div`

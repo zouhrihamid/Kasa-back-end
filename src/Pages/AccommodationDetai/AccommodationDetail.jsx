@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, DetailsWrapper, EquipmentsList, EquipmentItem } from './Accom.styled';
+import { Container, DetailsWrapper, EquipmentsList, EquipmentItem, TitleHostWrapper } from './Accom.styled';
 import { Carousel } from '../../components/Carousel/Carousel';
-import { TitleAndHost } from '../../components/TitleAndHost/TitleAndHost';
-import { TagsAndRate } from '../../components/TagsAndRate/TagsAndRate';
+import { TitleAndTags } from '../../components/TitleAndTags/TitleAndTags';
+import { HostAndRate } from '../../components/HostAndRate/HostAndRate';
 import { DetailsLabel } from '../../components/Details/Details';
 
 function AccommodationDetail() {
@@ -35,9 +35,10 @@ function AccommodationDetail() {
       return (
             <Container>
                   <Carousel House={accommodation} />
-                  <TitleAndHost House={accommodation} />
-                  <TagsAndRate House={accommodation} />
-
+                  <TitleHostWrapper>
+                        <TitleAndTags House={accommodation} />
+                        <HostAndRate House={accommodation} />
+                  </TitleHostWrapper>
                   <DetailsWrapper>
                         <DetailsLabel TitleLabel="Description">
                               <p>{accommodation.description}</p>

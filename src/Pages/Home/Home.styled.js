@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 
 const HomeWrapper = styled.div`
-      display: felx;
-      justify-content: center;
-      @media screen and (min-width: 360px) and (max-width: 360px) {
-            margin: 10px 20px;
-      }
+      display: flex;
+      flex-direction: column;
+      margin: 0% 8.5% 1% 7%;
 `;
 const HomeImg = styled.div`
-      margin: 10px 100px 10px 100px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      position: relative;
+      @media screen and (max-width: 1024px) {
+      }
 `;
 
 const Illustration = styled.img`
@@ -17,43 +21,72 @@ const Illustration = styled.img`
       border-radius: 10px;
       object-fit: cover;
       filter: brightness(70%);
+      @media screen and (max-width: 1024px) {
+            height: 111px;
+      }
+`;
+const TextOverlay = styled.div`
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      font-family: 'Montserrat';
+      font-size: 40px;
+      color: #ffffff;
+      font-size: clamp(20px, 4vw, 40px);
+      z-index: 2;
+      @media screen and (max-width: 1024px) {
+            font-size: clamp(16px, 3vw, 30px);
+      }
 `;
 const CardContainer = styled.div`
       display: grid;
+      margin-top: 2%;
+      margin-bottom: 2%;
+      padding: 1.5rem 2.2rem 2rem 2.2rem;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin: 20px 100px;
-      padding: 40px;
-      height: auto;
+      gap: 2rem;
+      row-gap: 1rem;
       background-color: #f6f6f6;
       border-radius: 25px;
+      box-sizing: border-box;
+      grid-auto-rows: auto;
+      @media screen and (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+            background-color: transparent;
+            padding: 1.5rem 0.3rem 2rem 0.2rem;
+            row-gap: 2rem;
+      }
+
+      @media screen and (max-width: 767.98px) {
+            grid-template-columns: repeat(1, 1fr);
+            background-color: transparent;
+            padding: 1.5rem 0.3rem 2rem 0.2rem;
+            row-gap: 2rem;
+      }
 `;
 const Card = styled.div`
-      height: 330px;
-      width: 330px;
+      height: auto;
+      width: 100%;
+      aspect-ratio: 1;
       background-position: center;
       background-size: cover;
       border-radius: 25px;
       background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${(props) => props.cover});
+      position: relative;
 `;
 
-const TextOverlay = styled.div`
-      position: absolute;
-      top: 27%;
-      left: 24%;
-      font-family: 'Montserrat';
-      font-size: 48px;
-      color: #ffffff;
-      z-index: 2;
-`;
 const StyledTitle = styled.h3`
       z-index: 2;
-      position: relative;
-      top: 250px;
+      position: absolute;
+      top: 80%;
+      left: 20px;
       color: white;
-      font-size: 18px;
+      font-size: 1em;
       text-align: start;
-      padding-left: 20px;
+      margin: 0px;
+      max-width: calc(100% - 40px);
 `;
 
 export { CardContainer, HomeWrapper, Card, Illustration, HomeImg, TextOverlay, StyledTitle };

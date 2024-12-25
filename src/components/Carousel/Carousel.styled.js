@@ -7,6 +7,9 @@ const CarouselWrapper = styled.div`
       gap: 20px;
       position: relative;
       padding: 0px 100px 0px 80px;
+      @media screen and (max-width: 768px) {
+            padding: 2%;
+      }
 `;
 
 const CarouselImage = styled.img`
@@ -23,8 +26,8 @@ const NavigationButton = styled.button`
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 50px;
-      height: 50px;
+      width: clamp(35px, 5vw, 60px);
+      height: clamp(35px, 5vw, 60px);
       opacity: ${(props) => (props.disabled ? 0.5 : 1)};
       pointer-events: ${(props) => (props.disabled ? 'none' : 'auto')};
       transition: opacity 0.3s ease;
@@ -36,11 +39,11 @@ const NavigationButton = styled.button`
 `;
 
 const PrevButton = styled(NavigationButton)`
-      left: 80px;
+      left: 6%;
 `;
 
 const NextButton = styled(NavigationButton)`
-      right: 100px;
+      right: 7.7%;
 `;
 
 const Counter = styled.p`
