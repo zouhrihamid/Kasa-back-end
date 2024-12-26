@@ -35,9 +35,11 @@ const AnimatedContentBox = styled.div`
       flex-direction: column;
       text-align: left;
       border-radius: 5px;
-      width: 101.56%;
+      width: 101%;
       list-style-type: none;
       margin-top: 5px;
+      padding-left: 2%;
+      padding-right: 2%;
       background-color: #f3f3f3;
       overflow: hidden;
 

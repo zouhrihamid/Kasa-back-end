@@ -17,6 +17,9 @@ const CarouselImage = styled.img`
       height: 400px;
       object-fit: cover;
       border-radius: 8px;
+      @media screen and (max-width: 768px) {
+            height: 255px;
+      }
 `;
 
 const NavigationButton = styled.button`

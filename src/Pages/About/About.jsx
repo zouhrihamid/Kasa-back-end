@@ -2,10 +2,10 @@ import AboutIllustration from '../../assets/ImgAbout.jpg';
 
 import { Illustration, HomeImg } from '../Home/Home.styled';
 import { DetailsLabel } from '../../components/Details/Details';
-import { DetailsLabelAbout } from './About.styled';
+import { DetailsLabelAbout, AboutWrapper } from './About.styled';
 function About() {
       return (
-            <div>
+            <AboutWrapper>
                   <HomeImg>
                         <Illustration src={AboutIllustration} />
                   </HomeImg>
@@ -27,7 +27,7 @@ function About() {
                               </p>
                         </DetailsLabel>
                   </DetailsLabelAbout>
-            </div>
+            </AboutWrapper>
       );
 }
 

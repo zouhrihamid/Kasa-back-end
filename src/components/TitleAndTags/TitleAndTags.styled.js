@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const TitleAndTagsWrapper = styled.div`
       display: flex;
-      justify-content: space-between;
+
       align-items: flex-start;
       width: 100%;
       flex-direction: column;
@@ -20,10 +20,13 @@ const Title = styled.div`
 `;
 
 const SubTitle = styled.h1`
-      font-size: 36px;
+      font-size: clamp(24px, 5vw, 36px);
       font-weight: 500;
       color: #ff6060;
-      margin: 0;
+      margin: 1%;
+      @media screen and (max-width: 768px) {
+            text-align: left;
+      }
 `;
 const Location = styled.h2`
       font-size: 18px;
@@ -34,17 +37,19 @@ const Location = styled.h2`
 const Tags = styled.div`
       display: flex;
       justify-content: space-between;
-      flex-direction: row;
-      margin-top: 5%;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin-top: 1%;
 `;
 
 const TagItem = styled.span`
       color: white;
-      font-size: 14px;
+      font-size: clamp(12px, 2vw, 16px);
       margin-right: 10px;
+      margin-top: 2%;
       background-color: #ff6060;
-      padding: 5px;
+      padding: clamp(4px, 1vw, 6px);
       border-radius: 10px;
-      width: 120px;
+      width: clamp(100px, 15vw, 160px);
 `;
 export { Tags, Location, SubTitle, Title, TagItem, TitleAndTagsWrapper };
