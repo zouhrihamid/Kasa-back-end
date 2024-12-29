@@ -20,16 +20,16 @@ const Title = styled.div`
 `;
 
 const SubTitle = styled.h1`
-      font-size: clamp(24px, 5vw, 36px);
+      font-size: clamp(20px, 5vw, 36px);
       font-weight: 500;
       color: #ff6060;
-      margin: 1%;
+      margin: 0%;
       @media screen and (max-width: 768px) {
             text-align: left;
       }
 `;
 const Location = styled.h2`
-      font-size: 18px;
+      font-size: clamp(10px, 5vw, 36px);
       font-weight: 500;
       color: #000000;
       margin: 0;

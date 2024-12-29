@@ -9,12 +9,12 @@ export const DetailsLabel = ({ TitleLabel, children }) => {
       const [contentHeight, setContentHeight] = useState('0px');
 
       const contentRef = useRef(null);
-
+      console.log(rotatedArrow);
       useEffect(() => {
             if (showLabel) {
                   setAnimate(true);
                   if (contentRef.current) {
-                        setContentHeight(`${contentRef.current.scrollHeight}px`); // Récupérer la hauteur réelle du contenu
+                        setContentHeight(`${contentRef.current.scrollHeight}px`);
                   }
             } else {
                   setContentHeight('0px');

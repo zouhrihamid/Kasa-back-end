@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import colors from '../../Utils/style/colors';
 
 const globalMargin = '2% 7% 2% 7%';
 

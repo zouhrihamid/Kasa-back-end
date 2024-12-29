@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { family } from '../../Utils/style/Theme';
 
 const HomeWrapper = styled.div`
       display: flex;
@@ -31,7 +32,7 @@ const TextOverlay = styled.div`
       left: 50%;
       transform: translate(-50%, -50%);
       white-space: nowrap;
-      font-family: 'Montserrat';
+      font-family: ${family.fontFamilyPrimary};
       font-size: 40px;
       color: #ffffff;
       font-size: clamp(20px, 4vw, 40px);
@@ -46,8 +47,8 @@ const CardContainer = styled.div`
       margin-bottom: 2%;
       padding: 1.5rem 2.2rem 2rem 2.2rem;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      row-gap: 1rem;
+
+      grid-gap: 2rem;
       background-color: #f6f6f6;
       border-radius: 25px;
       box-sizing: border-box;

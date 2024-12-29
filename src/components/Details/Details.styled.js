@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+
+const commonWidth = '100%';
 const ShowDetailLabel = styled.div`
       width: 100%;
       display: flex;
@@ -15,7 +17,7 @@ const BoxTitle = styled.div`
       color: white;
       align-items: center;
       border-radius: 10px;
-      width: 100%;
+      width: ${commonWidth};
       padding: 10px;
 `;
 
@@ -35,16 +37,15 @@ const AnimatedContentBox = styled.div`
       flex-direction: column;
       text-align: left;
       border-radius: 5px;
-      width: 101%;
+      width: ${commonWidth};
       list-style-type: none;
-      margin-top: 5px;
-      padding-left: 2%;
-      padding-right: 2%;
-      background-color: #f3f3f3;
+      margin-top: 2px;
+      padding: 5px 10px 5px 10px;
+      background-color: #f3f3f3f3;
       overflow: hidden;
 
       height: ${({ contentHeight }) => contentHeight};
-      transition: height 1s ease-in-out, opacity 1s ease-in-out;
+      transition: height 300ms ease-in, opacity 300ms ease-in;
       opacity: ${({ animate }) => (animate ? 1 : 0)};
 `;
 

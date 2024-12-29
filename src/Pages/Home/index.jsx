@@ -5,15 +5,15 @@ import HomeIllustration from '../../assets/ImageHome.jpg';
 
 function Home() {
       const [data, setData] = useState([]);
+
       useEffect(() => {
             const fetchData = async () => {
                   try {
                         const response = await fetch('/data/logements.json');
                         const result = await response.json();
-                        console.log(result);
                         setData(result);
                   } catch (error) {
-                        console.error('Error fetching data:', error);
+                        console.error('error fetching data', error);
                   }
             };
             fetchData();

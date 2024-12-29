@@ -4,5 +4,8 @@ const colors = {
       tertiary: '#FF6060',
       backgroundLight: '#F9F9FC',
 };
+const family = {
+      fontFamilyPrimary: 'Montserrat',
+};
 
-export default colors;
+export { colors, family };

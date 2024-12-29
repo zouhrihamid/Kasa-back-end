@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Container, DetailsWrapper, EquipmentsList, EquipmentItem, TitleHostWrapper } from './Accom.styled';
 import { Carousel } from '../../components/Carousel/Carousel';
 import { TitleAndTags } from '../../components/TitleAndTags/TitleAndTags';
@@ -10,7 +10,7 @@ function AccommodationDetail() {
       // const { title } = useParams();
       const { id } = useParams();
       const [accommodation, setAccommodation] = useState(null);
-
+      const navigate = useNavigate();
       useEffect(() => {
             const fetchAccommodation = async () => {
                   try {
@@ -21,15 +21,20 @@ function AccommodationDetail() {
                         const selectedAccommodation = result.find((item) => item.id === id);
 
                         console.log('recuperation id:', selectedAccommodation);
-                        setAccommodation(selectedAccommodation || null); // Mettre à jour l'état
+                        if (!selectedAccommodation) {
+                              navigate('/notfound');
+                        } else {
+                              setAccommodation(selectedAccommodation);
+                        }
                   } catch (error) {
                         console.error('Erreur lors de la récupération des données', error);
                   }
             };
             fetchAccommodation();
-      }, [id]);
+      }, [id, navigate]);
+
       if (!accommodation) {
-            return <p>Chargement du logement...</p>;
+            return <p>Chargement des données...</p>;
       }
 
       return (

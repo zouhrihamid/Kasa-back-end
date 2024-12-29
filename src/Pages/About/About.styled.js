@@ -14,9 +14,8 @@ const DetailsLabelAbout = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 72%;
-      margin-left: 10%;
-      margin-right: 10%;
+      width: 75%;
+
       @media screen and (max-width: 768px) {
             margin-left: 13%;
             margin-right: 10%;
