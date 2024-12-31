@@ -29,8 +29,8 @@ function Home() {
                         {data.map((item) => (
                               // <Link key={item.id} to={`/${item.title.replace(/ /g, '_')}`}>
                               <Link key={item.id} to={`/accommodation/${item.id}`}>
-                                    <Card key={item.id} cover={item.cover}>
-                                          <StyledTitle>{item.title}</StyledTitle> {/* Vous pouvez ajouter plus d'informations à l'intérieur de Card ici */}
+                                    <Card cover={item.cover}>
+                                          <StyledTitle>{item.title}</StyledTitle>{' '}
                                     </Card>
                               </Link>
                         ))}
