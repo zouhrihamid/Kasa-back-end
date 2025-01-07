@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { family } from '../../Utils/style/Theme';
 
 const TitleAndTagsWrapper = styled.div`
       display: flex;
@@ -24,6 +25,7 @@ const SubTitle = styled.h1`
       font-weight: 500;
       color: #ff6060;
       margin: 0%;
+      font-family: ${family.fontFamilyPrimary}, sans-serif;
       @media screen and (max-width: 768px) {
             text-align: left;
       }

@@ -28,26 +28,12 @@ export const Carousel = ({ House }) => {
                         </>
                   )}
 
-                  {/* {House.pictures.length > 1 && (
-                        <>
-                            
-                              {currentImageIndex !== 0 && (
-                                    <PrevButton onClick={prevImage}>
-                                          <img src={ArrowIcon} alt="Précédent" style={{ transform: 'rotate(180deg)' }} />
-                                    </PrevButton>
-                              )}
-
-                              
-                              {currentImageIndex !== House.pictures.length - 1 && (
-                                    <NextButton onClick={nextImage}>
-                                          <img src={ArrowIcon} alt="Suivant" />
-                                    </NextButton>
-                              )}
-                        </>
-                  )} */}
-                  <Counter>
-                        {currentImageIndex + 1}/{House.pictures.length}
-                  </Counter>
+                  {/*si plus d'une image affiche le compteur*/}
+                  {House.pictures.length > 1 && (
+                        <Counter>
+                              {currentImageIndex + 1}/{House.pictures.length}
+                        </Counter>
+                  )}
             </CarouselWrapper>
       );
 };
