@@ -17,13 +17,16 @@ export const Carousel = ({ House }) => {
             <CarouselWrapper>
                   <CarouselImage src={House.pictures[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
                   {/* j'ai suprimer les conditions pour que les images passent en boucle: si on est on derniere image on revient au premiere et inversement  */}
-
-                  <PrevButton onClick={prevImage}>
-                        <img src={ArrowIcon} alt="Précédent" style={{ transform: 'rotate(180deg)' }} />
-                  </PrevButton>
-                  <NextButton onClick={nextImage}>
-                        <img src={ArrowIcon} alt="Suivant" />
-                  </NextButton>
+                  {House.pictures.length > 1 && (
+                        <>
+                              <PrevButton onClick={prevImage}>
+                                    <img src={ArrowIcon} alt="Précédent" style={{ transform: 'rotate(180deg)' }} />
+                              </PrevButton>
+                              <NextButton onClick={nextImage}>
+                                    <img src={ArrowIcon} alt="Suivant" />
+                              </NextButton>
+                        </>
+                  )}
 
                   {/* {House.pictures.length > 1 && (
                         <>

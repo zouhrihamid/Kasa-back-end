@@ -62,6 +62,9 @@ const Counter = styled.p`
       border-radius: 8px;
       font-weight: 500;
       font-family: ${family.fontFamilyPrimary}, sans-serif;
+      @media screen and (max-width: 768px) {
+            display: none;
+      }
 `;
 
 export { CarouselWrapper, Counter, PrevButton, NavigationButton, NextButton, CarouselImage };
