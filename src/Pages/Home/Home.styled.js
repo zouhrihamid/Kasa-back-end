@@ -36,7 +36,7 @@ const TextOverlay = styled.div`
       left: 50%;
       transform: translate(-50%, -50%);
       white-space: nowrap;
-      font-family: ${family.fontFamilyPrimary};
+      font-family: ${family.fontFamilyPrimary}, sans-serif;
       font-size: 40px;
       color: #ffffff;
       font-size: clamp(20px, 4vw, 40px);

@@ -15,25 +15,33 @@ export const Carousel = ({ House }) => {
 
       return (
             <CarouselWrapper>
-                  {House.pictures.length > 1 && (
+                  <CarouselImage src={House.pictures[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
+                  {/* j'ai suprimer les conditions pour que les images passent en boucle: si on est on derniere image on revient au premiere et inversement  */}
+
+                  <PrevButton onClick={prevImage}>
+                        <img src={ArrowIcon} alt="Précédent" style={{ transform: 'rotate(180deg)' }} />
+                  </PrevButton>
+                  <NextButton onClick={nextImage}>
+                        <img src={ArrowIcon} alt="Suivant" />
+                  </NextButton>
+
+                  {/* {House.pictures.length > 1 && (
                         <>
-                              {/* Masquer le bouton "Précédent" sur la première image */}
+                            
                               {currentImageIndex !== 0 && (
                                     <PrevButton onClick={prevImage}>
                                           <img src={ArrowIcon} alt="Précédent" style={{ transform: 'rotate(180deg)' }} />
                                     </PrevButton>
                               )}
 
-                              <CarouselImage src={House.pictures[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
-
-                              {/* Masquer le bouton "Suivant" sur la dernière image */}
+                              
                               {currentImageIndex !== House.pictures.length - 1 && (
                                     <NextButton onClick={nextImage}>
                                           <img src={ArrowIcon} alt="Suivant" />
                                     </NextButton>
                               )}
                         </>
-                  )}
+                  )} */}
                   <Counter>
                         {currentImageIndex + 1}/{House.pictures.length}
                   </Counter>

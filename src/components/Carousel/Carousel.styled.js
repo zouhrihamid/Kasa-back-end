@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { family } from '../../Utils/style/Theme';
 
 const CarouselWrapper = styled.div`
       display: flex;
@@ -56,9 +57,11 @@ const Counter = styled.p`
       transform: translateX(50%);
       font-size: 18px;
       color: white;
-      background: rgba(0, 0, 0, 0.5);
+      /* background: rgba(0, 0, 0, 0.5); */
       padding: 5px 10px;
       border-radius: 8px;
+      font-weight: 500;
+      font-family: ${family.fontFamilyPrimary}, sans-serif;
 `;
 
 export { CarouselWrapper, Counter, PrevButton, NavigationButton, NextButton, CarouselImage };
