@@ -5,7 +5,7 @@ const ShowDetailLabel = styled.div`
       width: 100%;
       display: flex;
       flex-direction: column;
-      margin: 10px 50px 10px 20px;
+      margin: 10px 50px 10px 28px;
       @media screen and(max-width:768px) {
             flex-direction: column;
       }
@@ -44,7 +44,7 @@ const AnimatedContentBox = styled.div`
       background-color: #f3f3f3f3;
       overflow: hidden;
 
-      height: ${({ contentHeight }) => contentHeight};
+      height: ${({ isVisible, contentHeight }) => (isVisible ? contentHeight : '0px')};
       transition: height 300ms ease-in, opacity 300ms ease-in;
       opacity: ${({ animate }) => (animate ? 1 : 0)};
 `;

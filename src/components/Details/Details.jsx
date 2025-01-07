@@ -9,7 +9,7 @@ export const DetailsLabel = ({ TitleLabel, children }) => {
       const [contentHeight, setContentHeight] = useState('0px');
 
       const contentRef = useRef(null);
-      console.log(rotatedArrow);
+
       useEffect(() => {
             if (showLabel) {
                   setAnimate(true);
@@ -34,10 +34,10 @@ export const DetailsLabel = ({ TitleLabel, children }) => {
             <ShowDetailLabel>
                   <BoxTitle>
                         <TitleText>{TitleLabel}</TitleText>
-                        <ArrowIconImage src={ArrowIcon} alt="Description icon" onClick={handleDescriptionClick} rotated={rotatedArrow} />
+                        <ArrowIconImage src={ArrowIcon} alt="iconFemerOuvrir" onClick={handleDescriptionClick} rotated={rotatedArrow} />
                   </BoxTitle>
 
-                  <AnimatedContentBox ref={contentRef} show={showLabel} animate={animate} contentHeight={contentHeight}>
+                  <AnimatedContentBox ref={contentRef} isVisible={showLabel} animate={animate} contentHeight={contentHeight}>
                         {children}
                   </AnimatedContentBox>
             </ShowDetailLabel>

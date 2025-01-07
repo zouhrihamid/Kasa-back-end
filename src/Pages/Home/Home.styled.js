@@ -4,7 +4,10 @@ import { family } from '../../Utils/style/Theme';
 const HomeWrapper = styled.div`
       display: flex;
       flex-direction: column;
-      margin: 0% 8.5% 1% 7%;
+      margin: 0% 8% 1% 7%;
+      @media screen and (max-width: 768px) {
+            margin: 0% 5% 1% 4%;
+      }
 `;
 const HomeImg = styled.div`
       display: flex;
@@ -12,7 +15,8 @@ const HomeImg = styled.div`
       width: 100%;
       height: auto;
       position: relative;
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 768px) {
+            width: 100%;
       }
 `;
 
@@ -22,7 +26,7 @@ const Illustration = styled.img`
       border-radius: 10px;
       object-fit: cover;
       filter: brightness(70%);
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 768px) {
             height: 111px;
       }
 `;

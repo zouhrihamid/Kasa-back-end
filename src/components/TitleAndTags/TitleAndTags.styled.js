@@ -29,7 +29,7 @@ const SubTitle = styled.h1`
       }
 `;
 const Location = styled.h2`
-      font-size: clamp(10px, 5vw, 36px);
+      font-size: clamp(10px, 5vw, 20px);
       font-weight: 500;
       color: #000000;
       margin: 0;
