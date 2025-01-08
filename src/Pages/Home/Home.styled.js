@@ -37,6 +37,7 @@ const TextOverlay = styled.div`
       transform: translate(-50%, -50%);
       white-space: nowrap;
       font-family: ${family.fontFamilyPrimary};
+      font-weight: 700;
       font-size: 40px;
       color: #ffffff;
       font-size: clamp(20px, 4vw, 40px);
@@ -78,18 +79,20 @@ const Card = styled.div`
       background-position: center;
       background-size: cover;
       border-radius: 25px;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${(props) => props.cover});
+      background-color: #000;
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.3) 60%, rgba(0, 0, 0, 0.5) 85%, rgba(0, 0, 0, 0.6) 100%), url(${(props) => props.cover});
       position: relative;
 `;
 
 const StyledTitle = styled.h3`
-font-family:
+      font-family: ${family.fontFamilyPrimary};
+      font-weight: 700;
       z-index: 2;
       position: absolute;
       top: 80%;
       left: 20px;
       color: white;
-      font-size: 1em;
+      font-size: 18px;
       text-align: start;
       margin: 0px;
       max-width: calc(100% - 40px);
