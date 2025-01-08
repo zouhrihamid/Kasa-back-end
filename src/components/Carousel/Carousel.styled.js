@@ -61,7 +61,8 @@ const Counter = styled.p`
       padding: 5px 10px;
       border-radius: 8px;
       font-weight: 500;
-      font-family: ${family.fontFamilyPrimary}, sans-serif;
+      font-family: ${family.fontFamilyPrimary};
+      line-height: 25.67px;
       @media screen and (max-width: 768px) {
             display: none;
       }

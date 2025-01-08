@@ -36,7 +36,7 @@ const TextOverlay = styled.div`
       left: 50%;
       transform: translate(-50%, -50%);
       white-space: nowrap;
-      font-family: ${family.fontFamilyPrimary}, sans-serif;
+      font-family: ${family.fontFamilyPrimary};
       font-size: 40px;
       color: #ffffff;
       font-size: clamp(20px, 4vw, 40px);
@@ -83,6 +83,7 @@ const Card = styled.div`
 `;
 
 const StyledTitle = styled.h3`
+font-family:
       z-index: 2;
       position: absolute;
       top: 80%;

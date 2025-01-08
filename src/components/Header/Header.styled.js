@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { family } from '../../Utils/style/Theme';
 
 const globalMargin = '2% 7% 2% 7%';
 
@@ -25,9 +26,10 @@ const StyledLink = styled(Link)`
       padding: 10px 10px;
       color: black;
       text-decoration: none;
-      font-size: clamp(16px, 2.5vw, 30px);
+      font-size: clamp(16px, 2.5vw, 24px);
       text-align: center;
-      font-family: 'Montserrat', sans-serif;
+      font-family: ${family.fontFamilyPrimary};
+      font-weight: 500;
       text-decoration: ${(props) => (props.isClicked ? 'underline' : 'none')};
 `;
 

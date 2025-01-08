@@ -43,7 +43,8 @@ const TitleHostWrapper = styled.div`
             justify-content: space-between;
             align-items: center;
             gap: 15px;
-            margin: 2%;
+            margin: 0px 2% 0px 2%;
+            padding: 0px;
       }
 `;
 export { Container, DetailsWrapper, TitleHostWrapper, EquipmentsList, EquipmentItem };

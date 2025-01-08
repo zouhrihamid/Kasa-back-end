@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { family } from '../../Utils/style/Theme';
 const FooterContainer = styled.div`
       height: 209px;
       background-color: black;
@@ -9,7 +9,7 @@ const FooterContainer = styled.div`
       align-items: center;
 `;
 const LogoFooter = styled.img`
-      height: clamp(40px, 6vw, 60px);
+      height: 40px;
       max-height: 100%;
       width: auto;
       object-fit: contain;
@@ -18,10 +18,13 @@ const LogoFooter = styled.img`
 const CopyrightNotice = styled.div`
       color: white;
       text-align: center;
-      font-size: 0.9em;
+      font-size: 24px;
+      font-family: ${family.fontFamilyPrimary};
+      font-weight: 500;
 
       @media screen and (max-width: 767.98px) {
-            width: 20%;
+            width: 30%;
+            font-size: 12px;
       }
 `;
 
