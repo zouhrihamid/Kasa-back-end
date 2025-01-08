@@ -18,7 +18,7 @@ const DetailsLabelAbout = styled.div`
 
       @media screen and (max-width: 768px) {
             margin-left: 13%;
-            margin-right: 10%;
+            margin-right: 12%;
             width: 95%;
       }
 `;
